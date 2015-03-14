@@ -1,9 +1,11 @@
 'use strict';
-var yeoman = require('yeoman-generator');
+
 var chalk = require('chalk');
 var yosay = require('yosay');
+var yeoman = require('yeoman-generator');
 
 module.exports = yeoman.generators.Base.extend({
+
   initializing: function () {
     this.pkg = require('../package.json');
   },
@@ -11,15 +13,14 @@ module.exports = yeoman.generators.Base.extend({
   prompting: function () {
     var done = this.async();
 
-    // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the legendary ' + chalk.red('SamsJs') + ' generator!'
+      chalk.red('Sams JavaScript Project Scaffold') + ' generator!'
     ));
 
     var prompts = [{
       type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
+      name: 'Scaffold Sam`s JS Project?',
+      message: '(will copy over jscs, jshint and editorconfig)',
       default: true
     }];
 
@@ -36,10 +37,6 @@ module.exports = yeoman.generators.Base.extend({
         this.templatePath('_package.json'),
         this.destinationPath('package.json')
       );
-      this.fs.copy(
-        this.templatePath('_bower.json'),
-        this.destinationPath('bower.json')
-      );
     },
 
     projectfiles: function () {
@@ -51,12 +48,17 @@ module.exports = yeoman.generators.Base.extend({
         this.templatePath('jshintrc'),
         this.destinationPath('.jshintrc')
       );
+      this.fs.copy(
+        this.templatePath('jscsrc'),
+        this.destinationPath('.jscsrc')
+      );
     }
   },
 
   install: function () {
     this.installDependencies({
-      skipInstall: this.options['skip-install']
+      skipInstall: this.options['skip-install'],
+      bower: false
     });
   }
 });

@@ -1,33 +1,27 @@
 {
-  "name": "generator-sams-js",
-  "version": "0.0.0",
-  "description": "Yeoman generator",
-  "license": "MIT",
-  "main": "app/index.js",
-  "repository": "samsel/generator-sams-js",
-  "author": {
-    "name": "Sam Selvanathan",
-    "email": "",
-    "url": "https://github.com/samsel"
-  },
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "scripts": {
-    "test": "mocha"
-  },
-  "files": [
-    "app"
-  ],
-  "keywords": [
-    "yeoman-generator"
-  ],
-  "dependencies": {
-    "yeoman-generator": "^0.18.9",
-    "chalk": "^1.0.0",
-    "yosay": "^1.0.2"
-  },
-  "devDependencies": {
-    "mocha": "*"
-  }
+	"name": "generator-sams-js",
+	"version": "0.1.0",
+	"description": "a Yeoman generator to scaffold my JavaScript Projects",
+	"license": "MIT",
+	"main": "app/index.js",
+	"repository": "samsel/generator-sams-js",
+	"author": {
+		"name": "Sam Selvanathan",
+		"email": "sjasel@gmail.com",
+		"url": "https://github.com/samsel"
+	},
+	"engines": {
+		"node": ">=0.10.0"
+	},
+	"files": [
+		"app"
+	],
+	"keywords": [
+		"yeoman-generator"
+	],
+	"dependencies": {
+		"yeoman-generator": "^0.18.9",
+		"chalk": "^1.0.0",
+		"yosay": "^1.0.2"
+	}
 }
